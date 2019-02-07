@@ -32,10 +32,9 @@ public class RaceParser extends Parser<String, Race> {
 
     private Race parseRace(List<String> raceData) {
         if (raceData == null || raceData.size() < 3) return null;
-        Race race = new Race(parseDate(raceData.get(0)),
+        return new Race(parseDate(raceData.get(0)),
                 Double.parseDouble(raceData.get(1)),
                 raceData.get(2));
-        return race;
     }
 
     public Date parseDate(String input) {

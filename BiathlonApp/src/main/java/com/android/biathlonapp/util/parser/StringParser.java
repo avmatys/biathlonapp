@@ -12,6 +12,11 @@ public class StringParser extends Parser<String, List<String>> {
         this.delimiter = "\\s+";
     }
 
+    public StringParser( String delimiter) {
+        this.delimiter = delimiter;
+    }
+
+
     public StringParser(List<String> inputList, String delimiter) {
         super(inputList);
         this.delimiter = delimiter;
@@ -24,7 +29,7 @@ public class StringParser extends Parser<String, List<String>> {
                 .collect(Collectors.toList());
     }
 
-    private List<String> parseString(String input) {
+    public List<String> parseString(String input) {
         return Stream.of(input.split(delimiter))
                 .map(String::new)
                 .collect(Collectors.toList());
