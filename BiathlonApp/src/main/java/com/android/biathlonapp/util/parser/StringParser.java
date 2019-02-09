@@ -6,20 +6,27 @@ import java.util.stream.Stream;
 
 public class StringParser extends Parser<String, List<String>> {
 
+    private static final String EMPTY_STRING = "";
+    private static final String DEFAULT_DELIMITER = "\\s+";
+
     private String delimiter;
 
     public StringParser() {
-        this.delimiter = "\\s+";
+        this.delimiter = DEFAULT_DELIMITER;
     }
 
-    public StringParser( String delimiter) {
-        this.delimiter = delimiter;
+    public StringParser(String delimiter) {
+        super();
+        setDelimiter(delimiter);
     }
-
 
     public StringParser(List<String> inputList, String delimiter) {
         super(inputList);
-        this.delimiter = delimiter;
+        setDelimiter(delimiter);
+    }
+
+    private void setDelimiter(String delimiter) {
+        this.delimiter = (delimiter != null) ? delimiter : DEFAULT_DELIMITER;
     }
 
     @Override
@@ -30,6 +37,7 @@ public class StringParser extends Parser<String, List<String>> {
     }
 
     public List<String> parseString(String input) {
+        input = (input != null) ? input : EMPTY_STRING;
         return Stream.of(input.split(delimiter))
                 .map(String::new)
                 .collect(Collectors.toList());

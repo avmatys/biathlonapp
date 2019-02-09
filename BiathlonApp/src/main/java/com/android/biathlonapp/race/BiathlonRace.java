@@ -23,4 +23,13 @@ public class BiathlonRace extends Race {
         this.gender = gender;
         this.raceType = raceType;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getRaceType() {
+        return raceType;
+    }
+
 }

@@ -8,24 +8,24 @@ import java.util.stream.Collectors;
 
 public class BiathlonRaceParser extends RaceParser {
 
+    private static final Race BIATHLON_EMPTY_RACE = new BiathlonRace();
+
     public BiathlonRaceParser() {
     }
 
-    public BiathlonRaceParser(List<String> inputList) {
+    public BiathlonRaceParser(List<List<String>> inputList) {
         super(inputList);
     }
 
     @Override
     public List<Race> parse() {
-        Parser<String, List<String>> stringParser = new StringParser(getInputList(), "|");
-        List<List<String>> raceList = stringParser.parse();
-        return raceList.stream()
+        return getInputList().stream()
                 .map(this::parseBiathlonRace)
                 .collect(Collectors.toList());
     }
 
-    private Race parseBiathlonRace(List<String> raceData) {
-        if (raceData == null || raceData.size() < 5) return null;
+    public Race parseBiathlonRace(List<String> raceData) {
+        if (raceData == null || raceData.size() < 5) return BIATHLON_EMPTY_RACE;
         return new BiathlonRace(parseDate(raceData.get(0)),
                 Double.parseDouble(raceData.get(1)),
                 raceData.get(2),

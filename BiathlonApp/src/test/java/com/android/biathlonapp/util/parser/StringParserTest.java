@@ -25,6 +25,7 @@ public class StringParserTest {
         List<String> secondList = Arrays.asList(secondRow);
         // Create input list
         input = new ArrayList<>();
+        input.add(null);
         input.add(String.join("|", firstList));
         input.add(String.join("|", secondList));
         // Create expected list
@@ -58,4 +59,5 @@ public class StringParserTest {
         List<String> actual = stringParser.parseString(input.get(1));
         assertNotEquals(expected.get(0), actual);
     }
+
 }
