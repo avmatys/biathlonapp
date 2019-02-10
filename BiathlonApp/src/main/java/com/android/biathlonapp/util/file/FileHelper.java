@@ -1,4 +1,4 @@
-package com.android.biathlonapp.util.filehelper;
+package com.android.biathlonapp.util.file;
 
 import android.util.Log;
 
@@ -15,6 +15,7 @@ public class FileHelper {
     private static final String TAG = "FileHelper";
 
     public static List<String> readLines(Path path) {
+        if (path == null) throw new IllegalArgumentException();
         List<String> list = new ArrayList<>();
         try (Stream<String> lines = Files.lines(path)) {
             list = lines.collect(Collectors.toList());
