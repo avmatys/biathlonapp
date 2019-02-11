@@ -51,7 +51,7 @@ public class RaceParser extends Parser<List<String>, Race> {
     public Date parseDate(String input) {
         input = (input != null) ? input : EMPTY_STRING;
         SimpleDateFormat dateParser = new SimpleDateFormat(datePattern);
-        Date date = null;
+        Date date = new Date();
         try {
             date = dateParser.parse(input);
         } catch (ParseException e) {
