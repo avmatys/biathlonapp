@@ -2,6 +2,7 @@ package com.android.biathlonapp.util.parser;
 
 import com.android.biathlonapp.race.BiathlonRace;
 import com.android.biathlonapp.race.Race;
+import com.android.biathlonapp.util.DateHelper;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,7 +27,7 @@ public class BiathlonRaceParser extends RaceParser {
 
     public Race parseBiathlonRace(List<String> raceData) {
         if (raceData == null || raceData.size() < 5) return BIATHLON_EMPTY_RACE;
-        return new BiathlonRace(parseDate(raceData.get(0)),
+        return new BiathlonRace(DateHelper.parseDate(raceData.get(0), getDatePattern()),
                 Double.parseDouble(raceData.get(1)),
                 raceData.get(2),
                 raceData.get(3),

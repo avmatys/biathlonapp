@@ -10,30 +10,41 @@
         android:id="@+id/date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
 
     <TextView
         android:id="@+id/gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
 
     <TextView
         android:id="@+id/race_type"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
+
 
     <TextView
         android:id="@+id/distance"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
 
     <TextView
         android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp" />
 
 </LinearLayout>
